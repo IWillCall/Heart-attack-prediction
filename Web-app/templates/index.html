@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Оцінка ризику серцевого нападу</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <h1>Оцінка ризику серцевого нападу</h1>
+    <div class="container">
+      <div class="left">
+        <form action="/calculate_risk" method="post">
+          {% for key, question in questions.items() %}
+          <div>
+            {% if question.input_type == 'number' %}
+            <label>{{ question.question }}</label>
+            <input type="number" name="{{ question.question }}" required />
+            {% elif question.input_type == 'select' %}
+            <label>{{ question.question }}</label>
+            <select name="{{ question.question }}" required>
+              {% for answer in question.answers %}
+              <option value="{{ answer }}">{{ answer }}</option>
+              {% endfor %}
+            </select>
+            {% elif question.input_type == 'checkbox' %}
+            <div class="checkbox-container">
+              <input
+                type="checkbox"
+                name="{{ question.question }}"
+                value="Так"
+              />
+              <label>{{ question.question }}</label>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+          <button type="submit">Підрахувати ризик</button>
+        </form>
+      </div>
+      <div class="right">
+        <!-- Вміст про проєкт та модель залишаємо без змін -->
+        <!-- ... -->
+      </div>
+    </div>
+  </body>
+</html>

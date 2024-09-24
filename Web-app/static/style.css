@@ -1,0 +1,205 @@
+body {
+  background-color: #171a21;
+  color: #fffaff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  overflow-y: scroll;
+  flex-wrap: wrap; /* Дозволяє елементам переноситися на нові рядки */
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left,
+.right {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.right {
+  padding-left: 40px;
+  padding-top: 50px;
+}
+
+h1 {
+  flex: 1 1 100%; /* Елемент займатиме цілий рядок */
+  text-align: center;
+  width: 100%;
+}
+
+form {
+  margin-top: 20px;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+form div:not(:last-child) {
+  border-bottom: 1px solid #e84855;
+  padding-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e84855;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #171a21;
+  color: #fffaff;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e84855;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #171a21;
+  color: #fffaff;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e84855;
+  border-radius: 5px;
+  background-color: #e84855;
+  color: #fffaff;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #d43c4a;
+}
+
+.result-block {
+  background-color: #171a21;
+  border: 1px solid #e84855;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  text-align: center;
+}
+
+#modelDetailsButton,
+#projectDetailsButton {
+  border: 1px solid #e84855;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #171a21;
+  color: #fffaff;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+#modelDetails,
+#projectDetails {
+  border: 1px solid #e84855;
+  border-top: none;
+  padding: 0 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  background-color: #171a21;
+  color: #fffaff;
+}
+
+#modelDetails.open,
+#projectDetails.open {
+  padding: 10px;
+  max-height: 500px; /* Достатньо велике значення, щоб вмістити весь текст */
+}
+
+#modelDetailsButton:hover,
+#projectDetailsButton:hover {
+  background-color: #e84855;
+}
+
+.details-button {
+  display: flex;
+  justify-content: center; /* Горизонтальне вирівнювання */
+  align-items: center; /* Вертикальне вирівнювання */
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e84855;
+  border-radius: 3px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+  background-color: #e84855;
+}
+
+.checkbox-container input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 10px;
+  border: solid #fffaff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.error-message {
+  color: red;
+  display: none;
+}
+
+input:invalid + .error-message {
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171a21;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e84855;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d43c4a;
+}
