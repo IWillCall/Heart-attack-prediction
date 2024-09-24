@@ -2,6 +2,26 @@ Welcome to the Heart Attack Prediction Project! This project aims to develop a m
 
 **I should note that most of the documentation is directly in the Jupyter notebooks. I documented each step quite thoroughly. Here is just a very brief summary.**
 
+## Technologies and Skills Used
+
+**Technologies**: pandas, numpy, matplotlib, seaborn, scikit-learn, lightgbm, imblearn, optuna, catboost, shap
+
+**Skills**:
+
+- Researching the domain context of the project
+- Analyzing missing values (MCAR, MAR, MNAR)
+- Pipelines and feature transformers
+- Univariate, bivariate, and multivariate analysis and visualizations
+- Statistical tests: z-tests and Cramér's V
+- Encoding: ordinal, one-hot, frequency, binning
+- Transformation: logarithmic, Yeo-Johnson, standardization
+- Analyzing leaking variables
+- Cross-validation, stratified data splitting
+- Imputation: simpleimputer, KNN, MICE (with lightgbm), missForest
+- Dimensionality reduction and visualization using PCA and UMAP
+- Bayesian hyperparameter optimization
+- Feature importance assessment using SHAP
+
 ## Table of Contents
 
 - [Introduction](#introduction)
